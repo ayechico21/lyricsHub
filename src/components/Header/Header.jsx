@@ -11,18 +11,13 @@ function Header() {
 
 const Title = styled.h1`
   font-size: 2.5rem;
-  color: #645caa;
+  color: hsl(246, 41%, 41%);
 `;
 const HighlightText = styled.span`
   padding: 10px;
   margin-left: 5px;
   border-radius: 10px;
   color: white;
-  background: linear-gradient(
-    45deg,
-    hsla(246, 31%, 51%, 1) 0%,
-    hsla(246, 31%, 53%, 1) 77%,
-    hsla(0, 0%, 89%, 1) 99%
-  );
+  background: hsl(246, 31%, 51%);
 `;
 export default Header;

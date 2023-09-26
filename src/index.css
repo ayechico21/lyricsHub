@@ -8,9 +8,10 @@ body,
 
 body {
   font-family: sans-serif;
+  font-size: 1.2rem;
   background: linear-gradient(
     45deg,
-    hsla(246, 31%, 75%, 1) 0%,
-    hsla(0, 0%, 89%, 1) 70%
+    hsla(246, 31%, 55%, 1) 0%,
+    hsla(0, 0%, 79%, 1) 70%
   );
 }

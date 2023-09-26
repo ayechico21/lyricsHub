@@ -18,7 +18,7 @@ function App() {
             <Route exact path="/songs" element={<Songs />} />
             <Route exact path="/lyrics" element={<Lyrics />} />
           </Routes>
-          <div className="list">
+          {/* <div className="list">
             <ul>
               <li>
                 <Link to="/">Home</Link>
@@ -30,7 +30,7 @@ function App() {
                 <Link to="/lyrics">lyrics</Link>
               </li>
             </ul>
-          </div>
+          </div> */}
         </Router>
       </MainPageLayout>
     </Wrapper>

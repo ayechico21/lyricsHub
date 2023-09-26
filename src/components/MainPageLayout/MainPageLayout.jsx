@@ -2,12 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 function MainPageLayout({ children }) {
-  return (
-    <Wrapper>
-      <div>Main page Layoyt</div>
-      {children}
-    </Wrapper>
-  );
+  return <Wrapper>{children}</Wrapper>;
 }
 const Wrapper = styled.main`
   --space: 25px;
@@ -15,11 +10,13 @@ const Wrapper = styled.main`
   flex-grow: 1; /**take the remaining space on screen */
   display: flex;
   width: 100%; /**take all width space */
-  max-width: 800px; /**clamp container width */
+  max-width: 950px; /**clamp container width */
   padding: var(--space);
   margin-top: var(--space);
   margin-bottom: calc(var(--space) * 2);
-  border: 4px solid green;
   border-radius: 20px;
+  background: hsl(246, 31%, 92%);
+  border: 2px solid hsl(246, 31%, 42%);
+  box-shadow: 5px 5px hsl(246, 57%, 80%);
 `;
 export default MainPageLayout;
