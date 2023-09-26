@@ -1,3 +1,12 @@
+html {
+  height: 100%; /*enables body to use % height & width*/
+}
 body {
+  height: 100%; /*cover entire screen*/
   font-family: sans-serif;
+  background: linear-gradient(
+    45deg,
+    hsla(246, 31%, 75%, 1) 0%,
+    hsla(0, 0%, 89%, 1) 70%
+  );
 }
