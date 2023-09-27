@@ -15,7 +15,6 @@ const Wrapper = styled.section`
   display: flex;
   align-items: center; /**vertically align items at center of container */
   width: 100%; /**fill the container */
-  border: 2px dotted red;
 `;
 const Intro = styled.p`
   width: fit-content;

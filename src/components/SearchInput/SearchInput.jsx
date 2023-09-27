@@ -42,7 +42,7 @@ const Form = styled.form`
     hsla(246, 31%, 51%, 1) 45%,
     hsla(0, 0%, 89%, 1) 100%
   );
-  border: 2px dotted green;
+
   min-width: 0;
 `;
 const Label = styled.label`

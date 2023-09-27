@@ -43,7 +43,6 @@ const Wrapper = styled.div`
   align-items: center; /**center app on screen */
   padding: 20px 10px;
   height: 100%;
-  border: 2px dotted red;
 `;
 
 export default App;
