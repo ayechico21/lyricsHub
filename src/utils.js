@@ -10,7 +10,7 @@ export const BASE_URL = "https://genius-song-lyrics1.p.rapidapi.com";
 
 export const searchSong = async (song) => {
   /* try {
-    const response = await fetch(`${BASE_URL}/search/?q=${song}`, options);
+    const response = await fetch(`${BASE_URL}/search/?q=${song}&per_page=8`, options);
     const result = await response.json();
     return result.hits;
   } catch (error) {
@@ -432,110 +432,6 @@ export const searchSong = async (song) => {
             slug: "Alan-walker",
             url: "https://genius.com/artists/Alan-walker",
             iq: 3463,
-          },
-        },
-      },
-      {
-        highlights: [],
-        index: "song",
-        type: "song",
-        result: {
-          _type: "song",
-          annotation_count: 6,
-          api_path: "/songs/2486419",
-          artist_names: "Alan Walker",
-          full_title: "Sing Me to Sleep by Alan Walker",
-          header_image_thumbnail_url:
-            "https://images.genius.com/10db94c5c11e1bb1ac9cc917a6c59250.300x300x1.jpg",
-          header_image_url:
-            "https://images.genius.com/10db94c5c11e1bb1ac9cc917a6c59250.1000x1000x1.jpg",
-          id: 2486419,
-          instrumental: false,
-          lyrics_owner_id: 104344,
-          lyrics_state: "complete",
-          lyrics_updated_at: 1628044059,
-          path: "/Alan-walker-sing-me-to-sleep-lyrics",
-          pyongs_count: 28,
-          song_art_image_thumbnail_url:
-            "https://images.genius.com/82006c454b4bb897f02c1a66e2d3f2df.300x300x1.jpg",
-          song_art_image_url:
-            "https://images.genius.com/82006c454b4bb897f02c1a66e2d3f2df.300x300x1.jpg",
-          stats: {
-            unreviewed_annotations: 4,
-            hot: false,
-            pageviews: 155429,
-          },
-          title: "Sing Me to Sleep",
-          title_with_featured: "Sing Me to Sleep",
-          updated_by_human_at: 1628044059,
-          url: "https://genius.com/Alan-walker-sing-me-to-sleep-lyrics",
-          primary_artist: {
-            _type: "artist",
-            api_path: "/artists/456537",
-            header_image_url:
-              "https://images.genius.com/5dc7f5c57981ba34e464414f7fc08ebf.1000x333x1.jpg",
-            id: 456537,
-            image_url:
-              "https://images.genius.com/70b44d7b5a4be028e87b865dd425a4cc.1000x1000x1.jpg",
-            index_character: "a",
-            is_meme_verified: false,
-            is_verified: true,
-            name: "Alan Walker",
-            slug: "Alan-walker",
-            url: "https://genius.com/artists/Alan-walker",
-            iq: 3463,
-          },
-        },
-      },
-      {
-        highlights: [],
-        index: "song",
-        type: "song",
-        result: {
-          _type: "song",
-          annotation_count: 1,
-          api_path: "/songs/4812810",
-          artist_names: "K-391, Alan Walker & Martin Tungevaag (Ft. Mangoo)",
-          full_title:
-            "Play by K-391, Alan Walker & Martin Tungevaag (Ft. Mangoo)",
-          header_image_thumbnail_url:
-            "https://images.genius.com/df6eca38adc4c9c99d81817617f8dca5.300x300x1.png",
-          header_image_url:
-            "https://images.genius.com/df6eca38adc4c9c99d81817617f8dca5.1000x1000x1.png",
-          id: 4812810,
-          instrumental: false,
-          lyrics_owner_id: 6366028,
-          lyrics_state: "complete",
-          lyrics_updated_at: 1579038558,
-          path: "/K-391-alan-walker-and-martin-tungevaag-play-lyrics",
-          pyongs_count: 6,
-          song_art_image_thumbnail_url:
-            "https://images.genius.com/df6eca38adc4c9c99d81817617f8dca5.300x300x1.png",
-          song_art_image_url:
-            "https://images.genius.com/df6eca38adc4c9c99d81817617f8dca5.1000x1000x1.png",
-          stats: {
-            unreviewed_annotations: 0,
-            hot: false,
-            pageviews: 146933,
-          },
-          title: "Play",
-          title_with_featured: "Play (Ft. Mangoo)",
-          updated_by_human_at: 1607571612,
-          url: "https://genius.com/K-391-alan-walker-and-martin-tungevaag-play-lyrics",
-          primary_artist: {
-            _type: "artist",
-            api_path: "/artists/1928501",
-            header_image_url:
-              "https://images.genius.com/16fd7b01d04dcb9a0f436893fd5a48ef.820x360x1.jpg",
-            id: 1928501,
-            image_url:
-              "https://images.genius.com/a2e2446e2b3ea94154f9b671838cf91c.1000x1000x1.jpg",
-            index_character: "k",
-            is_meme_verified: false,
-            is_verified: false,
-            name: "K-391, Alan Walker & Martin Tungevaag",
-            slug: "K-391-alan-walker-and-martin-tungevaag",
-            url: "https://genius.com/artists/K-391-alan-walker-and-martin-tungevaag",
           },
         },
       },

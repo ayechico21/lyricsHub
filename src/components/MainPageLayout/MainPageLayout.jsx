@@ -10,7 +10,8 @@ const Wrapper = styled.main`
   flex-grow: 1; /**take the remaining space on screen */
   display: flex;
   width: 100%; /**take all width space */
-  max-width: 950px; /**clamp container width */
+  height: 80%;
+  max-width: 1000px; /**clamp container width */
   padding: var(--space);
   margin-top: var(--space);
   margin-bottom: calc(var(--space) * 2);
