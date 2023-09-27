@@ -14,9 +14,10 @@ function App() {
       <MainPageLayout>
         <Router>
           <Routes>
+            <Route path="*" element={<div>Error</div>} />
             <Route exact path="/" element={<Home />} />
-            <Route exact path="/songs" element={<Songs />} />
-            <Route exact path="/lyrics" element={<Lyrics />} />
+            <Route exact path="/lyrics/:songId" element={<Lyrics />} />
+            <Route exact path="/:songInput" element={<Songs />} />
           </Routes>
           {/* <div className="list">
             <ul>

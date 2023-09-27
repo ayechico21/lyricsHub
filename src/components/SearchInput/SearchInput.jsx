@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { Search } from "react-feather";
+import { useNavigate } from "react-router-dom";
 function SearchInput() {
   const [songInput, setSongInput] = React.useState("");
-
+  const navigate = useNavigate("");
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); /**prevent default page reload */
+    navigate(`/${songInput}`); /**route to songs page */
   };
 
   return (
@@ -15,6 +17,7 @@ function SearchInput() {
         <Input
           id="song-input"
           type="text"
+          required
           value={songInput}
           onChange={(e) => setSongInput(e.target.value)}
           placeholder="Search your Song"
@@ -42,7 +45,6 @@ const Form = styled.form`
     hsla(246, 31%, 51%, 1) 45%,
     hsla(0, 0%, 89%, 1) 100%
   );
-
   min-width: 0;
 `;
 const Label = styled.label`

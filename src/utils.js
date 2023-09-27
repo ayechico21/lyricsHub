@@ -15,6 +15,7 @@ export const searchSong = async (song) => {
     return result.hits;
   } catch (error) {
     console.error(error);
+    return null;
   } */
 
   const result = {
