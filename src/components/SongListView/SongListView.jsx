@@ -12,6 +12,7 @@ function SongListView({ songList }) {
         return (
           <Song
             key={id}
+            songId={id}
             name={title}
             artist={artist_names}
             imgUrl={song_art_image_thumbnail_url}

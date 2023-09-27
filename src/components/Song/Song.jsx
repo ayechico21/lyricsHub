@@ -1,9 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-function Song({ name, artist, imgUrl }) {
+function Song({ songId, name, artist, imgUrl }) {
+  const navigate = useNavigate();
   return (
-    <Wrapper>
+    <Wrapper onClick={() => navigate(`/lyrics/${songId}`)}>
       <ImageWrapper>
         <img src={imgUrl} alt={`${name} thumbnail`} />
       </ImageWrapper>
@@ -15,7 +17,7 @@ function Song({ name, artist, imgUrl }) {
   );
 }
 
-const Wrapper = styled.article`
+const Wrapper = styled.button`
   display: flex;
   gap: 10px;
   padding: 5px;
@@ -52,6 +54,7 @@ const ImageWrapper = styled.div`
 `;
 const SongInfo = styled.article`
   color: hsl(246, 41%, 31%);
+  text-align: start; /**text begins from start {left} of container */
 `;
 const Name = styled.p`
   font-weight: 600;
