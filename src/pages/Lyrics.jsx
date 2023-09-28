@@ -24,7 +24,12 @@ function Lyrics() {
 
   return (
     <Wrapper>
-      <ReturnButton onClick={() => {}}>
+      <ReturnButton
+        onClick={() => {
+          /**go back to previous page */
+          navigate(-1);
+        }}
+      >
         <ArrowLeftCircle size={32} />
       </ReturnButton>
       {!lyrics && (
