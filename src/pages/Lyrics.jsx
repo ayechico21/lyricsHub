@@ -17,7 +17,6 @@ function Lyrics() {
       setTimeout(() => {
         setLyrics(result);
       }, 2000);
-      console.log(result);
     };
     fetchLyrics();
   }, [songId]);
@@ -37,7 +36,7 @@ function Lyrics() {
           <LoaderIcon />
         </LoadWrapper>
       )}
-      {lyrics && <div>{parse(lyrics)}</div>}
+      {lyrics && <LyricsWrapper>{parse(lyrics)}</LyricsWrapper>}
     </Wrapper>
   );
 }
@@ -45,7 +44,6 @@ function Lyrics() {
 const Wrapper = styled.section`
   width: 100%; /**take the entire container width */
   display: flex;
-  border: 2px dotted green;
 `;
 
 const ReturnButton = styled.button`
@@ -85,5 +83,41 @@ const LoadWrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+const LyricsWrapper = styled.article`
+  margin: 0 auto; /**center self within the container */
+  color: hsl(246, 41%, 21%);
+  text-align: center;
+  & span {
+    padding: 5px 10px;
+    color: hsl(0, 0%, 100%);
+    background: linear-gradient(
+      45deg,
+      hsl(246, 31%, 41%) 80%,
+      hsl(0, 0%, 79%) 100%
+    );
+    border-radius: 5px;
+  }
+  flex: 1; /**take up as much space as possible of the container */
+  overflow: hidden scroll; /**scroll bar in y direction */
+
+  &::-webkit-scrollbar {
+    width: 12px; /* width of the entire scrollbar */
+  }
+
+  &::-webkit-scrollbar-track {
+    background: hsl(246, 31%, 75%); /* color of the tracking area */
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: hsl(246, 31%, 61%); /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+    &:hover {
+      background-color: hsl(246, 31%, 41%);
+    }
+  }
+  scroll-behavior: smooth;
 `;
 export default Lyrics;
