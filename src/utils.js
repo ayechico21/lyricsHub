@@ -9,16 +9,19 @@ export const options = {
 export const BASE_URL = "https://genius-song-lyrics1.p.rapidapi.com";
 
 export const searchSong = async (song) => {
-  /* try {
-    const response = await fetch(`${BASE_URL}/search/?q=${song}&per_page=8`, options);
+  try {
+    const response = await fetch(
+      `${BASE_URL}/search/?q=${song}&per_page=8`,
+      options
+    );
     const result = await response.json();
     return result.hits;
   } catch (error) {
     console.error(error);
     return null;
-  } */
+  }
 
-  const result = {
+  /* const result = {
     hits: [
       {
         highlights: [],
@@ -437,18 +440,32 @@ export const searchSong = async (song) => {
       },
     ],
   };
-  return result.hits;
+  return result.hits; */
 };
 
 export const searchLyrics = async (id) => {
-  /* try {
+  console.log("lyrics API called");
+  try {
     const response = await fetch(`${BASE_URL}/song/lyrics/?id=${id}`, options);
     const result = await response.json();
-    return result.lyrics.lyrics.body;
+    /**lyrics are html in text format */
+    const htmlString = result.lyrics.lyrics.body.html;
+    /**remove all "a" tags */
+    const strippedHtmlString = htmlString.replace(
+      /<a\s+href=[^>]*>|<\/a>/gi,
+      ""
+    );
+    /**replace "[]"" with "<span>[]</span>", for styling purposes" */
+    const lyricsHtmlString = strippedHtmlString.replace(
+      /\[([^\]]+)\]/g,
+      "<span>$&</span>"
+    );
+    return lyricsHtmlString;
   } catch (error) {
     console.error(error);
-  } */
-  const result = {
+  }
+
+  /*const result = {
     lyrics: {
       _type: "lyrics",
       api_path: "/songs/2396871/lyrics",
@@ -898,14 +915,14 @@ export const searchLyrics = async (id) => {
       },
     },
   };
-  /**lyrics are html in text format */
+  /**lyrics are html in text format 
   const htmlString = result.lyrics.lyrics.body.html;
-  /**remove all "a" tags */
+  /**remove all "a" tags 
   const strippedHtmlString = htmlString.replace(/<a\s+href=[^>]*>|<\/a>/gi, "");
-  /**replace "[]"" with "<span>[]</span>", for styling purposes" */
+  /**replace "[]"" with "<span>[]</span>", for styling purposes" 
   const lyricsHtmlString = strippedHtmlString.replace(
     /\[([^\]]+)\]/g,
     "<span>$&</span>"
   );
-  return lyricsHtmlString;
+  return lyricsHtmlString;*/
 };

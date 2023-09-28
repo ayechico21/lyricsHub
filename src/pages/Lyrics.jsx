@@ -14,9 +14,10 @@ function Lyrics() {
     const fetchLyrics = async () => {
       const result = await searchLyrics(songId);
       /**wait 2 sec for lyrics to show up */
-      setTimeout(() => {
+      /* setTimeout(() => {
         setLyrics(result);
-      }, 2000);
+      }, 2000); */
+      setLyrics(result);
     };
     fetchLyrics();
   }, [songId]);

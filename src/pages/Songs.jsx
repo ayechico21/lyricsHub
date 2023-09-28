@@ -13,14 +13,15 @@ function Songs() {
   React.useEffect(() => {
     /**fetch song list using api */
     const fetchSongList = async () => {
-      const result = await searchSong("hello");
+      const result = await searchSong(songInput);
       /**wait 2 seconds before setting songList */
-      setTimeout(() => {
+      /* setTimeout(() => {
         setSongList(result);
-      }, 2000);
+      }, 2000); */
+      setSongList(result);
     };
     fetchSongList();
-  }, []);
+  }, [songInput]);
 
   return (
     <Wrapper>
