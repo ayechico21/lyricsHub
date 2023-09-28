@@ -5,21 +5,20 @@ import { Loader } from "react-feather";
 import { useParams } from "react-router-dom";
 import { searchSong } from "../utils";
 import SongListView from "../components/SongListView";
+import LoaderIcon from "../components/LoaderIcon/LoaderIcon";
 function Songs() {
   const [songList, setSongList] = React.useState([]);
   const { songInput } = useParams(); /**searched Song Name*/
 
-  /**fetch song list using api */
-  const fetchSongList = async () => {
-    const result = await searchSong("hello");
-    /**wait 2 seconds before setting songList */
-    setTimeout(() => {
-      setSongList(result);
-    }, 2000);
-  };
-
   React.useEffect(() => {
-    console.log("useEffect");
+    /**fetch song list using api */
+    const fetchSongList = async () => {
+      const result = await searchSong("hello");
+      /**wait 2 seconds before setting songList */
+      setTimeout(() => {
+        setSongList(result);
+      }, 2000);
+    };
     fetchSongList();
   }, []);
 
@@ -27,13 +26,9 @@ function Songs() {
     <Wrapper>
       <SearchInput />
       {/**if songList not found */}
-      {!songList && <div>Error</div>}
+      {!songList && <div>ERROR</div>}
       {/**While songList is being fetched */}
-      {songList && songList.length < 1 && (
-        <Icon>
-          <Loader size={40} />
-        </Icon>
-      )}
+      {songList && songList.length < 1 && <LoaderIcon />}
       {/**songList fetched, show songs */}
       {songList && songList.length > 0 && <SongListView songList={songList} />}
     </Wrapper>
@@ -60,6 +55,7 @@ const Icon = styled.div`
   margin: 0 auto;
   color: hsl(246, 41%, 21%);
   animation: ${rotateIcon} 1.5s linear infinite;
+  border: 2px dotted green;
 `;
 
 export default Songs;

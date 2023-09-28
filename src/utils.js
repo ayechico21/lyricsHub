@@ -898,5 +898,14 @@ export const searchLyrics = async (id) => {
       },
     },
   };
-  return result;
+  /**lyrics are html in text format */
+  const htmlString = result.lyrics.lyrics.body.html;
+  /**remove all "a" tags */
+  const strippedHtmlString = htmlString.replace(/<a\s+href=[^>]*>|<\/a>/gi, "");
+  /**replace "[]"" with "<span>[]</span>", for styling purposes" */
+  const lyricsHtmlString = strippedHtmlString.replace(
+    /\[([^\]]+)\]/g,
+    "<span>$&</span>"
+  );
+  return lyricsHtmlString;
 };
