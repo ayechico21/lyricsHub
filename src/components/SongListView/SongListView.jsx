@@ -29,7 +29,7 @@ const Wrapper = styled.section`
 
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
 `;
 
 const HighLightText = styled.h3`
