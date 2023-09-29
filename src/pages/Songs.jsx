@@ -27,7 +27,12 @@ function Songs() {
     <Wrapper>
       <SearchInput />
       {/**if songList not found */}
-      {!songList && <div>ERROR</div>}
+      {!songList && (
+        <Error>
+          <p>Sorry!!!!</p>
+          <p>Song search has failed......</p>
+        </Error>
+      )}
       {/**While songList is being fetched */}
       {songList && songList.length < 1 && <LoaderIcon />}
       {/**songList fetched, show songs */}
@@ -60,6 +65,26 @@ const Icon = styled.div`
   color: hsl(246, 41%, 21%);
   animation: ${rotateIcon} 1.5s linear infinite;
   border: 2px dotted green;
+`;
+
+const Error = styled.div`
+  flex: 1; /**fill up parent width */
+  align-self: stretch; /**fill up parent height */
+
+  /**align error display at center of container */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 600;
+  color: hsl(246, 41%, 41%);
+
+  & > p:first-of-type {
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+    color: red;
+  }
 `;
 
 export default Songs;

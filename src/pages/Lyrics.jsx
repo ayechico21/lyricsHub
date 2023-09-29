@@ -14,10 +14,10 @@ function Lyrics() {
     /**lyrics are in htmlString format */
     const fetchLyrics = async () => {
       const result = await searchLyrics(songId);
-      /**wait 2 sec for lyrics to show up */
-      /* setTimeout(() => {
+      /**wait 2 sec for lyrics to show up 
+      setTimeout(() => {
         setLyrics(result);
-      }, 2000); */
+      }, 2000);*/
       setLyrics(result);
     };
     fetchLyrics();
@@ -33,11 +33,18 @@ function Lyrics() {
       >
         <ArrowLeftCircle size={32} />
       </ReturnButton>
-      {!lyrics && (
+      {lyrics === null && (
+        <Error>
+          <p>Sorry!!!</p>
+          <p>Lyrics cannot be found</p>
+        </Error>
+      )}
+      {lyrics === "" && lyrics.length < 1 && (
         <LoadWrapper>
           <LoaderIcon />
         </LoadWrapper>
       )}
+
       {lyrics && <LyricsWrapper>{parse(lyrics)}</LyricsWrapper>}
     </Wrapper>
   );
@@ -122,4 +129,24 @@ const LyricsWrapper = styled.article`
   }
   scroll-behavior: smooth;
 `;
+const Error = styled.div`
+  flex: 1; /**fill up parent width */
+  align-self: stretch; /**fill up parent height */
+
+  /**align error display at center of container */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-weight: 600;
+  color: hsl(246, 41%, 41%);
+
+  & > p:first-of-type {
+    font-size: 1.5rem;
+    letter-spacing: 5px;
+    color: red;
+  }
+`;
+
 export default Lyrics;
