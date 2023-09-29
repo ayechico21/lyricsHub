@@ -11,7 +11,7 @@ export const BASE_URL = "https://genius-song-lyrics1.p.rapidapi.com";
 export const searchSong = async (song) => {
   try {
     const response = await fetch(
-      `${BASE_URL}/search/?q=${song}&per_page=8`,
+      `${BASE_URL}/search/?q=${song}&per_page=15`,
       options
     );
     const result = await response.json();
@@ -21,7 +21,8 @@ export const searchSong = async (song) => {
     return null;
   }
 
-  /* const result = {
+  /*
+  const result = {
     hits: [
       {
         highlights: [],
@@ -135,7 +136,8 @@ export const searchSong = async (song) => {
           _type: "song",
           annotation_count: 4,
           api_path: "/songs/3714282",
-          artist_names: "Alan Walker (Ft. Sophia Somajo)",
+          artist_names:
+            "Alan Walker (Ft. Sophia Somajo) Alan Walker (Ft. Sophia Somajo) Alan Walker (Ft. Sophia Somajo) Alan Walker (Ft. Sophia Somajo)",
           full_title: "Diamond Heart by Alan Walker (Ft. Sophia Somajo)",
           header_image_thumbnail_url:
             "https://images.genius.com/10db94c5c11e1bb1ac9cc917a6c59250.300x300x1.jpg",
@@ -440,7 +442,7 @@ export const searchSong = async (song) => {
       },
     ],
   };
-  return result.hits; */
+  return result.hits;*/
 };
 
 export const searchLyrics = async (id) => {
@@ -465,7 +467,8 @@ export const searchLyrics = async (id) => {
     console.error(error);
   }
 
-  /*const result = {
+  /*
+  const result = {
     lyrics: {
       _type: "lyrics",
       api_path: "/songs/2396871/lyrics",
