@@ -15,6 +15,9 @@ const Wrapper = styled.section`
   display: flex;
   align-items: center; /**vertically align items at center of container */
   width: 100%; /**fill the container */
+  @media (max-width: 650px) {
+    flex-direction: column;
+  }
 `;
 const Intro = styled.p`
   width: fit-content;
@@ -25,5 +28,8 @@ const Intro = styled.p`
   font-size: 1.3rem;
   font-weight: 600;
   background: hsl(246, 31%, 75%);
+  @media (max-width: 650px) {
+    margin: auto;
+  }
 `;
 export default Home;

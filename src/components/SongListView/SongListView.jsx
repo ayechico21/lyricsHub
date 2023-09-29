@@ -29,7 +29,8 @@ const Wrapper = styled.section`
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 10px;
+  overflow: hidden scroll; /**hidden horizontal scroll */
 `;
 
 const HighLightText = styled.h3`

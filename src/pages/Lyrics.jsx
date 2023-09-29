@@ -9,6 +9,7 @@ function Lyrics() {
   const [lyrics, setLyrics] = React.useState("");
   const { songId } = useParams();
   const navigate = useNavigate();
+
   React.useEffect(() => {
     /**lyrics are in htmlString format */
     const fetchLyrics = async () => {

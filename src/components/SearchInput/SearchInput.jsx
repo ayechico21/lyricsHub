@@ -48,6 +48,7 @@ const Form = styled.form`
     hsla(0, 0%, 89%, 1) 100%
   );
   min-width: 0;
+  border-radius: 10px;
 `;
 const Label = styled.label`
   font-weight: 600;

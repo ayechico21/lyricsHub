@@ -40,6 +40,9 @@ const Wrapper = styled.section`
   align-items: center; /**vertically align items at center of container */
   gap: 20px;
   width: 100%; /**fill the container */
+  @media (max-width: 650px) {
+    flex-direction: column;
+  }
 `;
 const rotateIcon = keyframes`
 0%{
