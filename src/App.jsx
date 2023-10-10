@@ -15,13 +15,9 @@ function App() {
         <Router>
           <Routes>
             <Route path="*" element={<div>Error</div>} />
-            <Route exact path="/lyricsHub" element={<Home />} />
-            <Route
-              exact
-              path="/lyricsHub/lyrics/:songId"
-              element={<Lyrics />}
-            />
-            <Route exact path="/lyricsHub/:songInput" element={<Songs />} />
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/lyrics/:songId" element={<Lyrics />} />
+            <Route exact path="/:songInput" element={<Songs />} />
           </Routes>
           {/* <div className="list">
             <ul>

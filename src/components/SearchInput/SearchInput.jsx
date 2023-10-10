@@ -7,7 +7,7 @@ function SearchInput() {
   const navigate = useNavigate("");
   const handleSubmit = async (e) => {
     e.preventDefault(); /**prevent default page reload */
-    navigate(`/lyricsHub/${songInput}`, {
+    navigate(`/${songInput}`, {
       state: songInput,
     }); /**route to songs page */
   };

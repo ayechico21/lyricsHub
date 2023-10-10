@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import SearchInput from "../components/SearchInput";
-import { Loader } from "react-feather";
+
 import { useParams } from "react-router-dom";
 import { searchSong } from "../utils";
 import SongListView from "../components/SongListView";

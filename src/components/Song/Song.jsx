@@ -5,7 +5,7 @@ import styled from "styled-components";
 function Song({ songId, name, artist, imgUrl }) {
   const navigate = useNavigate();
   return (
-    <Wrapper onClick={() => navigate(`/lyricsHub/lyrics/${songId}`)}>
+    <Wrapper onClick={() => navigate(`/lyrics/${songId}`)}>
       <ImageWrapper>
         <img src={imgUrl} loading="lazy" alt={`${name} thumbnail`} />
       </ImageWrapper>
