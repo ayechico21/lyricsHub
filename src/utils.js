@@ -432,18 +432,15 @@ export const searchSong = async (song) => {
   };
   return result.hits;*/
 
-  try {
-    console.log("song api called");
-    const response = await fetch(
-      `${BASE_URL}/search/?q=${song}&per_page=15`,
-      options
-    );
-    const result = await response.json();
-    return result.hits;
-  } catch (error) {
-    console.error(error);
-    return null;
-  }
+  console.log("song api called");
+  const response = await fetch(
+    `${BASE_URL}/search/?q=${song}&per_page=15`,
+    options
+  );
+
+  if (!response.ok) return null; /**error while fetching data */
+  const result = await response.json();
+  return result.hits;
 };
 
 export const searchLyrics = async (id) => {
@@ -906,24 +903,19 @@ export const searchLyrics = async (id) => {
   );
   return lyricsHtmlString;*/
 
-  try {
-    console.log("lyrics API called");
-    const response = await fetch(`${BASE_URL}/song/lyrics/?id=${id}`, options);
-    const result = await response.json();
-    /**lyrics are html in text format */
-    const htmlString = result.lyrics.lyrics.body.html;
-    /**remove all "a" tags */
-    const strippedHtmlString = htmlString.replace(
-      /<a\s+href=[^>]*>|<\/a>/gi,
-      ""
-    );
-    /**replace "[]"" with "<span>[]</span>", for styling purposes" */
-    const lyricsHtmlString = strippedHtmlString.replace(
-      /\[([^\]]+)\]/g,
-      "<span>$&</span>"
-    );
-    return lyricsHtmlString;
-  } catch (error) {
-    console.error(error);
-  }
+  console.log("lyrics API called");
+  const response = await fetch(`${BASE_URL}/song/lyrics/?id=${id}`, options);
+  if (!response.ok) return ""; /**error while fetching data */
+  const result = await response.json();
+
+  /**lyrics are html in text format */
+  const htmlString = result.lyrics.lyrics.body.html;
+  /**remove all "a" tags */
+  const strippedHtmlString = htmlString.replace(/<a\s+href=[^>]*>|<\/a>/gi, "");
+  /**replace "[]"" with "<span>[]</span>", for styling purposes" */
+  const lyricsHtmlString = strippedHtmlString.replace(
+    /\[([^\]]+)\]/g,
+    "<span>$&</span>"
+  );
+  return lyricsHtmlString;
 };
